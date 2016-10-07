@@ -47,6 +47,9 @@ alias ls='ls -F'
 
 export EDITOR=vim
 
+/usr/bin/keychain $HOME/.ssh/id_rsa
+. $HOME/.keychain/${HOSTNAME}-sh > /dev/null 
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
