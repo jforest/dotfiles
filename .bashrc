@@ -52,5 +52,8 @@ PATH=$PATH:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# Add perlbrew to your path
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
 export TERM=screen-256color
 PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;1m\]\W\[\e[37;0m\]]\\$ '
