@@ -12,7 +12,7 @@ set expandtab
 set laststatus=2
 set background=dark
 colorscheme solarized
-set guifont=Andale\ Mono\ for\ Powerline
+set guifont=Ubuntu\ Mono\ derivative\ Powerline
 if !has('gui_running')
   set t_Co=256
 endif
@@ -28,8 +28,8 @@ let g:lightline = {
       \   'modified': 'MyModified',
       \   'filename': 'MyFilename'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'right': '', 'left': '' },
+      \ 'subseparator': { 'right': '', 'left': '' }
       \ }
 
 function! MyModified()
@@ -48,14 +48,14 @@ function! MyReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤"
+    return ""
   else
     return ""
   endif
 endfunction
 
 function! MyFugitive()
-  return exists('*fugitive#head') && strlen(fugitive#head()) ? '⭠ '.fugitive#head() : ''
+  return exists('*fugitive#head') && strlen(fugitive#head()) ? ' '.fugitive#head() : ''
 endfunction
 
 function! MyFilename()
