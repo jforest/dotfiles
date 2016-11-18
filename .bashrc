@@ -48,6 +48,7 @@ export EDITOR=vim
 # Use keychain to keep track of ssh-agents
 /usr/bin/env keychain $HOME/.ssh/id_rsa
 . $HOME/.keychain/${HOSTNAME}-sh > /dev/null 
+. $HOME/.keychain/${HOSTNAME}-sh-gpg > /dev/null
 
 # Add perlbrew to your path
 [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
