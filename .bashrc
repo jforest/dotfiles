@@ -59,8 +59,10 @@ PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;
 # Git prompt fun!
 GIT_PROMPT_THEME=Solarized_UserHost
 GIT_PROMPT_ONLY_IN_REPO=1
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+if [ command -v brew >/dev/null 2>&1 ]; then
+    if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+        source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+    fi
 fi
 
 PATH=$PATH:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
