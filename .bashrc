@@ -45,12 +45,24 @@ alias ls='ls -F'
 
 export EDITOR=vim
 
+# Use keychain to keep track of ssh-agents
 /usr/bin/env keychain $HOME/.ssh/id_rsa
 . $HOME/.keychain/${HOSTNAME}-sh > /dev/null 
+. $HOME/.keychain/${HOSTNAME}-sh-gpg > /dev/null
+
+# Add perlbrew to your path
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
+export TERM=screen-256color
+PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;1m\]\W\[\e[37;0m\]]\\$ '
+
+# Git prompt fun!
+GIT_PROMPT_THEME=Solarized_UserHost
+GIT_PROMPT_ONLY_IN_REPO=1
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 
 PATH=$PATH:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export TERM=screen-256color
-PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;1m\]\W\[\e[37;0m\]]\\$ '
