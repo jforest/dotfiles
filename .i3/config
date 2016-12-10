@@ -20,6 +20,9 @@ font pango:monospace 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 exec --no-startup-id feh --bg-scale ~/backgrounds/8375-wallpaper-hill-field-tuscany-italy-92336.jpg
+exec --no-startup-id dropbox start
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -55,6 +58,11 @@ bindsym Mod1+t border none
 # brightness up and down
 bindsym $mod+F7 exec xbacklight +10
 bindsym $mod+F6 exec xbacklight -10
+
+# Pulse Audio controls
+bindsym $mod+F10 exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym $mod+F9 exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym $mod+F8 exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # change focus
 bindsym Mod1+$left focus left
