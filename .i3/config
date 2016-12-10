@@ -22,7 +22,7 @@ font pango:monospace 8
 exec --no-startup-id feh --bg-scale ~/backgrounds/8375-wallpaper-hill-field-tuscany-italy-92336.jpg
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
+exec --no-startup-id volumeicon
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
