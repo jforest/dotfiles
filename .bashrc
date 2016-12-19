@@ -68,3 +68,13 @@ fi
 PATH=$PATH:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f $HOME/sourcecode/google-cloud-sdk/path.bash.inc ]; then
+  source "$HOME/sourcecode/google-cloud-sdk/path.bash.inc"
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f $HOME/soucecode/google-cloud-sdk/completion.bash.inc ]; then
+  source "$HOME/sourcecode/google-cloud-sdk/completion.bash.inc"
+fi
