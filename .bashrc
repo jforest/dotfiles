@@ -65,7 +65,7 @@ if [ command -v brew >/dev/null 2>&1 ]; then
     fi
 fi
 
-PATH=$PATH:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
