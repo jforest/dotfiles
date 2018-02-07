@@ -100,6 +100,8 @@ nnoremap <C-H> <C-W><C-H>
 nmap <leader>s :SyntasticCheck<CR>
 let g:syntastic_go_checkers = ['golint']
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'podchecker']
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
