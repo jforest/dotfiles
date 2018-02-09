@@ -74,7 +74,7 @@ if [ command -v brew >/dev/null 2>&1 ]; then
     fi
 fi
 
-PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/usr/local/opt/python/libexec/bin:$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -95,6 +95,15 @@ then
     export PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;1m\]\W\[\e[37;0m\]$(__git_ps1 "\[\033[0;32m\] (%s)\[\033[0m\]")]\\$ '
 else
     export PS1='\[\e[37;0m\][\[\e[37;1m\]\u\[\e[37;0m\]@\[\e[31;1m\]\h\[\e[37;0m\]:\[\e[33;1m\]\W\[\e[37;0m\]]\\$ '
+fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # enable programmable completion features (you don't need to enable
