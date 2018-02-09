@@ -6,7 +6,7 @@ filetype plugin indent on
 set ts=4
 set sts=4
 set sw=4
-set smartindent
+"set smartindent
 "set autoindent
 set expandtab
 set laststatus=2
@@ -125,3 +125,4 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype perl setlocal ts=4 sts=4 sw=4
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
+autocmd Filetype yml setlocal ts=2 sts=2 sw=2
